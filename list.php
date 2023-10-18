@@ -46,13 +46,26 @@ $row_pg = $result_pg->fetch(PDO::FETCH_ASSOC);
 $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
 //16 / 10
 
+  $max_links = 1;
 
   $dados .= "<nav aria-label='Page navigation'><ul class='pagination justify-content-center'>";
-  $dados .= "<li class='page-item disabled'><a class='page-link'>Anterior</a></li>";
-  $dados .= "<li class='page-item'><a class='page-link' href='#'>1</a></li>";
-  $dados .= "<li class='page-item'><a class='page-link' href='#'>2</a></li>";
-  $dados .= "<li class='page-item'><a class='page-link' href='#'>3</a></li>";
-  $dados .= "<li class='page-item'><a class='page-link' href='.$quantidade_pg.'>Proximo '$quantidade_pg'</a></li>";
+  $dados .= "<li class='page-item'><a class='page-link' href='#' onclick='listarUsuarios(1)'>Primeira</a></li>";
+  
+  for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina -1; $pag_ant++) {
+    if($pag_ant >= 1) {
+      $dados .= "<li class='page-item'><a class='page-link' onclick='listarUsuarios($pag_ant)' href='#'>$pag_ant</a></li>";
+    }
+  }
+  
+  $dados .= "<li class='page-item active'><a class='page-link' href='#'>$pagina</a></li>";
+
+  for($pag_ant = $pagina - $max_links; $pag_ant >= $pagina +1; $pag_ant++) {
+    if($pag_ant >= 4) {
+      $dados .= "<li class='page-item'><a class='page-link' href='#'>$pag_ant</a></li>";
+    }
+  }
+  
+  $dados .= "<li class='page-item'><a class='page-link' href='#' onclick='listarUsuarios($quantidade_pg)'>Última</a></li>";
   
   $dados .= "</ul></nav>";
 
