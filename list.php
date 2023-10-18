@@ -21,7 +21,7 @@ $dados = "<div class='table-responsive'>
                         <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
-                        <th>Ações - $pagina</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>";
@@ -29,11 +29,10 @@ while($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)){
   //var_dump($row_usuario);
 
   extract($row_usuario);
-  $dados .= "<tr><td>$id</td><td>$nome</td><td>$email</td><td>Ações</td></tr>";
+  $dados .= "<tr><td>$id</td><td>$nome</td><td>$email</td><td>Ações - $pagina</td></tr>";
 }
 
-$dados .= 
-    "</tbody>
+$dados .= "</tbody>
   </table>
 </div>";
 

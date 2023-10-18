@@ -22,6 +22,7 @@ include_once "conexao.php"
             </div>
         </div>
         <hr>
+        
         <div class="row">
             <div class="col-lg-12">
 
