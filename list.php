@@ -3,7 +3,14 @@ include_once "conexao.php";
 
 $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_NUMBER_INT);
 
-$query_usuarios = "SELECT id, nome, email FROM usuarios LIMIT 10";
+if (!empty($pagina)){
+
+  //calcular o inicio visualização
+  $qnt_result_pg = 10; //Quantidade de registro por pagina
+  $inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;
+  // 1 * 10 = 10 - 10 = 0
+
+$query_usuarios = "SELECT id, nome, email FROM usuarios ORDER BY id DESC LIMIT $inicio, $qnt_result_pg";
 $result_usuarios = $conn->prepare($query_usuarios);
 $result_usuarios->execute();
 
@@ -31,3 +38,7 @@ $dados .=
 </div>";
 
 echo $dados;
+
+} else {
+  echo"<div class='alert alert-danger' role='alert'>Erro: Nenhum usuario encontrado!</div";
+}
