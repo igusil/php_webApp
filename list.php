@@ -29,7 +29,7 @@ while($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)){
   //var_dump($row_usuario);
 
   extract($row_usuario);
-  $dados .= "<tr><td>$id</td><td>$nome</td><td>$email</td><td>Ações - $pagina</td></tr>";
+  $dados .= "<tr><td>$id</td><td>$nome</td><td>$email</td><td>Ações</td></tr>";
 }
 
 $dados .= "</tbody>
@@ -48,7 +48,7 @@ $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
 
   $max_links = 1;
 
-  $dados .= "<nav aria-label='Page navigation'><ul class='pagination justify-content-center'>";
+  $dados .= "<nav aria-label='Page navigation'><ul class='pagination pagination-sm justify-content-center'>";
   $dados .= "<li class='page-item'><a class='page-link' href='#' onclick='listarUsuarios(1)'>Primeira</a></li>";
   
   for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina -1; $pag_ant++) {
@@ -59,9 +59,9 @@ $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
   
   $dados .= "<li class='page-item active'><a class='page-link' href='#'>$pagina</a></li>";
 
-  for($pag_ant = $pagina - $max_links; $pag_ant >= $pagina +1; $pag_ant++) {
-    if($pag_ant >= 4) {
-      $dados .= "<li class='page-item'><a class='page-link' href='#'>$pag_ant</a></li>";
+  for($pag_dep = $pagina +1; $pag_dep <= $pagina + $max_links; $pag_dep++) {
+    if($pag_dep <= $quantidade_pg) {
+      $dados .= "<li class='page-item'><a class='page-link' href='#' onclick='listarUsuarios($pag_dep)'>$pag_dep</a></li>";
     }
   }
   
