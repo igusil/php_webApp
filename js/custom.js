@@ -14,7 +14,7 @@ cadForm.addEventListener("submit", async(e) => {
   
   const dadosForm = new FormData(cadForm);
   dadosForm.append("add", 1);
-  
+  //console.log(dadosForm)
   await fetch("cadastrar.php", {
     method:"POST",
     body: dadosForm,
