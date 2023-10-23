@@ -8,7 +8,7 @@ if (!empty($pagina)){
   //calcular o inicio visualização
   $qnt_result_pg = 5; //Quantidade de registro por pagina
   $inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;
-  // 1 * 10 = 10 - 10 = 0
+  //
 
 $query_usuarios = "SELECT id, nome, email FROM usuarios ORDER BY id DESC LIMIT $inicio, $qnt_result_pg";
 $result_usuarios = $conn->prepare($query_usuarios);
@@ -36,15 +36,15 @@ $dados .= "</tbody>
   </table>
 </div>";
 
-//paginação - Somar a quantidade de usuarios
+//pagination - sum qnt users
 $query_pg = "SELECT COUNT(id) AS num_result FROM usuarios";
 $result_pg = $conn->prepare($query_pg);
 $result_pg->execute();
 $row_pg = $result_pg->fetch(PDO::FETCH_ASSOC);
 
-//Quantidade de paginas
+//qnt pages
 $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
-//16 / 10
+//16 / 10//
 
   $max_links = 1;
 
