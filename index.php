@@ -1,7 +1,7 @@
 <?php
 include_once "conexao.php"
 ?>
-<!--@j.igr dev-->
+<!--@j.igr -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
