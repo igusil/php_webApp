@@ -13,7 +13,7 @@ $cad_usuario->bindParam(':email', $dados['email']);
 $cad_usuario->execute();
 
 if($cad_usuario->rowCount()){
-  $retorna= ['erro' => false, 'msg' => "Usuário cadastrado com sucesso!"]
+  $retorna= ['erro' => false, 'msg' => "Usuário cadastrado com sucesso!"];
 }else {
-
+  $retorna = ['erro' => true, 'msg' => "Erro: Usuário não cadastrado com sucesso!"];
 }
