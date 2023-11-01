@@ -48,7 +48,7 @@ include_once "conexao.php"
                     </div>
                     <div class="mb-3">
                         <label for="email" class="col-form-label">E-mail:</label>
-                        <input type="text" name="email" class="form-control" id="email" placeholder="Digite o seu melhor e-mail" required>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Digite o seu melhor e-mail" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
