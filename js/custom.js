@@ -1,5 +1,6 @@
 const tbody = document.querySelector(".listar-usuarios");
 const cadForm = document.getElementById("cad-usuario-form");
+const msgAlerta = document.getElementById("msgAlerta");
 
 const listarUsuarios = async (pagina) => {
   const dados = await fetch("./list.php?pagina=" + pagina);
@@ -20,7 +21,13 @@ cadForm.addEventListener("submit", async(e) => {
     method:"POST",
     body: dadosForm,
   });
+  
   const resposta = await dados.json();
   console.log(resposta);
+  if(resposta['erro']){
+    msgAlerta.innerHTML = resposta['msg'];
+  } else{
+    msgAlerta.innerHTML = resposta['msg'];
+  }
 });
 /* */

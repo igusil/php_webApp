@@ -42,6 +42,7 @@ include_once "conexao.php"
                 </div>
                 <div class="modal-body">
                 <form id="cad-usuario-form">
+                    <span id="msgAlerta"></span>
                     <div class="mb-3">
                         <label for="nome" class="col-form-label">Nome:</label>
                         <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite o nome completo" required>
