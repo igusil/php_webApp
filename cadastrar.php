@@ -17,3 +17,5 @@ if($cad_usuario->rowCount()){
 }else {
   $retorna = ['erro' => true, 'msg' => "Erro: Usuário não cadastrado com sucesso!"];
 }
+
+echo json_encode($retorna);
