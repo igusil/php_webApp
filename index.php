@@ -20,6 +20,7 @@ include_once "conexao.php"
                 <h4>Listar Usuários</h4>
                 </div>
                 <div>
+                    <!---->
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cadUsuarioModal">Cadastar</button>
                 </div>
