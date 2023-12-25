@@ -30,4 +30,3 @@ cadForm.addEventListener("submit", async(e) => {
     msgAlerta.innerHTML = resposta['msg'];
   }
 });
-/* */
