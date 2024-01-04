@@ -12,19 +12,24 @@ listarUsuarios(1);
 
 cadForm.addEventListener("submit", async(e) => {
   e.preventDefault();
+
+  if(document.getElementById("nome"),value =="") {
+    console.log("erro: necessario preencher o campo nome")
+  }
   
   const dadosForm = new FormData(cadForm);
   dadosForm.append("add", 1);
-  //console.log(dadosForm)
+
   const dados = await fetch("cadastrar.php", {
     method:"POST",
     body: dadosForm,
   });
+
   const resposta = await dados.json();
   console.log(resposta);
   if(resposta['erro']){
     msgAlerta.innerHTML = resposta['msg'];
-  } else{
+  }else{
     msgAlerta.innerHTML = resposta['msg'];
   }
 });
