@@ -5,9 +5,9 @@ include_once "conexao.php";
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 if(empty($dados['nome'])){
-
+  $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo Nome!</div>"];
 }else if(empty($dados['email'])){
-
+  $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo E-mail!</div>"];
 }else{
   $query_usuario = "INSERT INTO usuarios (nome, email) VALUES (:nome, :email)";
   $cad_usuario = $conn->prepare($query_usuario);
