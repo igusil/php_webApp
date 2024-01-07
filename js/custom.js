@@ -2,15 +2,12 @@ const tbody = document.querySelector(".listar-usuarios");
 const cadForm = document.getElementById("cad-usuario-form");
 const msgAlerta = document.getElementById("msgAlerta");
 const cadModal = new bootstrap.Modal(document.getElementById("cadUsuarioModal"));
-
 const listarUsuarios = async (pagina) => {
   const dados = await fetch("./list.php?pagina=" + pagina);
   const resposta = await dados.text();
   tbody.innerHTML = resposta;
 }
-
 listarUsuarios(1);
-
 cadForm.addEventListener("submit", async(e) => {
   e.preventDefault();
 
