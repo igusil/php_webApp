@@ -16,7 +16,9 @@ cadForm.addEventListener("submit", async(e) => {
   }
   
   const dadosForm = new FormData(cadForm);
-  dadosForm.append("add", 1);
+  dadosForm.append("add", 1); 
+
+  document.getElementById("cad-usuario-btn").value = "Salvando..";
 
   const dados = await fetch("cadastrar.php", {
     method:"POST",
@@ -31,5 +33,7 @@ cadForm.addEventListener("submit", async(e) => {
     msgAlerta.innerHTML = resposta['msg'];
     cadForm.reset();
     cadModal.hide();
+    listarUsuarios(1);
   }
+  document.getElementById("cad-usuario-btn").value = "Cadastrar";
 });
