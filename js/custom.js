@@ -1,5 +1,6 @@
 const tbody = document.querySelector(".listar-usuarios");
 const cadForm = document.getElementById("cad-usuario-form");
+const msgAlertaErroCad = document.getElementById("msgAlertaErroCad");
 const msgAlerta = document.getElementById("msgAlerta");
 const cadModal = new bootstrap.Modal(document.getElementById("cadUsuarioModal"));
 const listarUsuarios = async (pagina) => {
@@ -28,7 +29,7 @@ cadForm.addEventListener("submit", async(e) => {
   const resposta = await dados.json();
   console.log(resposta);
   if(resposta['erro']){
-    msgAlerta.innerHTML = resposta['msg'];
+    msgAlertaErroCad.innerHTML = resposta['msg'];
   }else{
     msgAlertaSuccessCad.innerHTML = resposta['msg'];
     cadForm.reset();
