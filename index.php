@@ -27,6 +27,7 @@ include_once "conexao.php"
             </div>
         </div>
         <hr>
+        <span id="msgAlerta"></span>
         <div class="row">
             <div class="col-lg-12">
                 <span class="listar-usuarios"></span>   
