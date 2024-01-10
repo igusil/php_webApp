@@ -30,7 +30,7 @@ cadForm.addEventListener("submit", async(e) => {
   if(resposta['erro']){
     msgAlerta.innerHTML = resposta['msg'];
   }else{
-    msgAlerta.innerHTML = resposta['msg'];
+    msgAlertaSuccessCad.innerHTML = resposta['msg'];
     cadForm.reset();
     cadModal.hide();
     listarUsuarios(1);
