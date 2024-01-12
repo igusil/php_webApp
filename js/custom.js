@@ -15,12 +15,9 @@ cadForm.addEventListener("submit", async(e) => {
   if(document.getElementById("nome"),value =="") {
     console.log("erro: necessario preencher o campo nome")
   }
-  
   const dadosForm = new FormData(cadForm);
   dadosForm.append("add", 1); 
-
   document.getElementById("cad-usuario-btn").value = "Salvando..";
-
   const dados = await fetch("cadastrar.php", {
     method:"POST",
     body: dadosForm,
