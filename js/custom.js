@@ -22,7 +22,8 @@ cadForm.addEventListener("submit", async(e) => {
     method:"POST",
     body: dadosForm,
   });
-
+  
+  const resposta = await dados.json();
   console.log(resposta);
   if(resposta['erro']){
     msgAlertaErroCad.innerHTML = resposta['msg'];
