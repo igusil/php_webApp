@@ -13,7 +13,8 @@ cadForm.addEventListener("submit", async(e) => {
   e.preventDefault();
 
   if(document.getElementById("nome"),value =="") {
-    console.log("erro: necessario preencher o campo nome")
+    console.log("erro: necessario preencher o campo nome 1");
+    msgAlertaErroCad.innerHTML = "erro: necessario preencher o campo nome 1";
   }
   const dadosForm = new FormData(cadForm);
   dadosForm.append("add", 1); 
