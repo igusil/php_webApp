@@ -4,7 +4,6 @@ include_once "conexao.php";
 $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_NUMBER_INT);
 
 if (!empty($pagina)){
-
   //calcular o inicio visualização
   $qnt_result_pg = 5; //Quantidade de registro por pagina
   $inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;
